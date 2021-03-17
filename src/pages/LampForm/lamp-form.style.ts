@@ -2,13 +2,15 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
 
-export const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 425px;
-    margin: 1rem;
+export const Container = styled.div`
     width: 100%;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
 
     h1 {
         text-align: center;
