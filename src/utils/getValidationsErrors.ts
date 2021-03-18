@@ -15,9 +15,5 @@ export default function getValidationsErrors(error: ValidationError): Errors {
         validationErrors[error.path as string] = error.message;
     }
 
-
-    console.log(error);
-    console.log(validationErrors);
-
     return validationErrors;
 }
