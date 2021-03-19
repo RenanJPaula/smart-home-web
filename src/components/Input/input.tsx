@@ -48,12 +48,11 @@ const Input: React.FC<InputProps> = ({ icon: Icon, name, ...props }) => {
                 {...props}
             />
 
-            {
-                !!fieldConfig.error &&
+            {!!fieldConfig.error && (
                 <Error message={fieldConfig.error}>
                     <FiAlertCircle />
                 </Error>
-            }
+            )}
         </InputContainer>
     );
 }
