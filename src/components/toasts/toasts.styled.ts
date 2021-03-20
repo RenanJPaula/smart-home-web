@@ -1,5 +1,6 @@
 
 import styled, { css } from 'styled-components';
+import { animated } from 'react-spring';
 
 export interface ToastProps {
     type?: 'info' | 'success' | 'error';
@@ -30,7 +31,7 @@ export const ToastsContainer = styled.ul`
     list-style: none;
 `
 
-export const Toast = styled.li<ToastProps>`
+export const Toast = styled(animated.li)<ToastProps>`
     position: relative;
     width: 360px;
     padding: 1rem;

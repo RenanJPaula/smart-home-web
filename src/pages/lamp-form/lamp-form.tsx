@@ -3,6 +3,7 @@ import { Form } from '@unform/web';
 import React, { useCallback, useRef } from 'react';
 import { BiArrowBack, BiRename } from 'react-icons/bi';
 import { FaNetworkWired } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import Button from '../../components/button/button';
 import Input from '../../components/Input/input';
@@ -48,9 +49,9 @@ const LampForm: React.FC = () => {
                 <Input name="networkAddress" placeholder="IP Address" icon={FaNetworkWired} />
                 <Button type="submit">Save</Button>
 
-                <a href="/">
+                <Link to="/">
                     <BiArrowBack /> Back
-                </a>
+                </Link>
             </Form>
         </Container>
     );
