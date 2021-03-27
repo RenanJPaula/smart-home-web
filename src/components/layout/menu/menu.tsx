@@ -2,23 +2,40 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { useTransition } from 'react-spring';
 import { useMenu } from '../../../hooks/menu';
 import { HideText } from '../../hide-text/hide-text.styled';
 import { CloseMenu, MenuContainer, MenuHeader, MenuItem, MenuList } from './menu.styled';
 
+const AnimationConfig = {
+    from: {
+        opacity: 0
+    },
+    enter: {
+        opacity: 1
+    },
+    leave: {
+        opacity: 0
+    }, 
+    config: {
+        duration: 150
+    }
+};
+
 export const Menu: React.FC = () => {
     const { opened, close } = useMenu();
+    const openAnimationTransition = useTransition(opened, null, AnimationConfig);
 
     return (
         <>
-            { opened &&
-                <MenuContainer>
+            { openAnimationTransition.map(({ item, props, key }) => item && (
+                <MenuContainer key={key} style={{...props}}>
                     <MenuHeader>
                         <CloseMenu onClick={close}>
                             <RiCloseFill />
                             <HideText>
-                                Open Menu
-                            </HideText>
+                                Close Menu
+                        </HideText>
                         </CloseMenu>
                     </MenuHeader>
                     <MenuList>
@@ -30,7 +47,7 @@ export const Menu: React.FC = () => {
                         </MenuItem>
                     </MenuList>
                 </MenuContainer>
-            }
+            ))}
         </>
     )
 }

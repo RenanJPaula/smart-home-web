@@ -1,7 +1,8 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-export const MenuContainer = styled.nav`
+export const MenuContainer = styled(animated.nav)`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
