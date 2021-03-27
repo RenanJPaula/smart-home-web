@@ -11,8 +11,8 @@ export const ApplicationLayoutContainer = styled.div`
     margin: 0 auto;
     width: 100%;
     height: 100vh;
-    overflow-y: hidden;
     padding: 1rem;
+    overflow-x: hidden;
 `;
 
 export const MainContent = styled.div`
