@@ -9,5 +9,3 @@ const DevicesPage: React.FC = () => {
 };
 
 export default DevicesPage;
-
-

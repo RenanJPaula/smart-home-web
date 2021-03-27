@@ -1,14 +1,17 @@
 import { DevicesProvider } from "../hooks/devices";
 import { ToastProvider } from "../hooks/toast";
+import { MenuProvider } from '../hooks/menu';
 
 const GlobalProvider: React.FC = ({ children }) => {
     return (
         <>
-            <ToastProvider>
-                <DevicesProvider>
-                    {children}
-                </DevicesProvider>
-            </ToastProvider>
+            <MenuProvider>
+                <ToastProvider>
+                    <DevicesProvider>
+                        {children}
+                    </DevicesProvider>
+                </ToastProvider>
+            </MenuProvider>
         </>
     );
 };

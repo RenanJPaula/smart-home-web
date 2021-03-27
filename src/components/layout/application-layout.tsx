@@ -5,7 +5,7 @@ import { useTransition } from 'react-spring';
 import ApplicationRoute from '../../pages/application-route';
 import GobalStyle from './../../styles/global.styled';
 import { AnimatedTransictionContainer, ApplicationLayoutContainer, MainContent } from './application-layout.styled';
-import { Link } from 'react-router-dom';
+import { Header } from './header/header';
 
 const transitonsAnimationsDef = {
     from: { opacity: 0, transform: 'translate(100%, 0)' },
@@ -19,14 +19,7 @@ const ApplicationLayout: React.FC = () => {
     return (
         <>
             <ApplicationLayoutContainer>
-                <ul>
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/lamp'>New Lamp</Link>
-                    </li>
-                </ul>
+                <Header />
                 <MainContent>
                     {transitions.map(({ item, props, key }) => (
                         <AnimatedTransictionContainer key={key} style={props}>

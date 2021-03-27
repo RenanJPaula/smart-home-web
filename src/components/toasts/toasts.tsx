@@ -24,24 +24,28 @@ const Toasts: React.FC<ToastsProps> = ({ messages }) => {
     const { close } = useToast();
 
     return (
-        <ToastsContainer>
-            {messagesWithTransiction.map(({ item, key, props }) => (
-                <Toast key={key} type={item.type} style={props}>
-                    { icons[item.type]}
+        <>
+            {messages.length > 0 &&
+                <ToastsContainer>
+                    {messagesWithTransiction.map(({ item, key, props }) => (
+                        <Toast key={key} type={item.type} style={props}>
+                            { icons[item.type]}
 
-                    <ToastContent>
-                        <Title>{item.title}</Title>
-                        {!!item.text && (
-                            <Message>{item.text}</Message>
-                        )}
-                    </ToastContent>
+                            <ToastContent>
+                                <Title>{item.title}</Title>
+                                {!!item.text && (
+                                    <Message>{item.text}</Message>
+                                )}
+                            </ToastContent>
 
-                    <CloseToast onClick={() => close(item.id)}>
-                        <FiXCircle />
-                    </CloseToast>
-                </Toast>
-            ))}
-        </ToastsContainer>
+                            <CloseToast onClick={() => close(item.id)}>
+                                <FiXCircle />
+                            </CloseToast>
+                        </Toast>
+                    ))}
+                </ToastsContainer>
+            }
+        </>
     );
 };
 
