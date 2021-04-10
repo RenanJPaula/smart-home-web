@@ -1,13 +1,14 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './button.styled';
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    loading?: boolean;
+};
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> { };
-
-const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ children, loading, ...props }) => {
     return (
-        <Container type="button" {...props}>
-            {children}
+        <Container type="button" {...props} disabled={loading}>
+            {!!loading ? 'Loading...' : children}
         </Container>
     );
 }

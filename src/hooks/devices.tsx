@@ -3,7 +3,6 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { Device } from '../models/device.model';
 import deviceStorage from '../storages/device-storage';
 
-
 interface DeviceContextData {
     devices: Device[];
     getDeviceById(id: string): Device | null;

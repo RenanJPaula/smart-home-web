@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHeader } from '../../hooks/header';
 
 const DevicesPage: React.FC = () => {
+    const { setTitle } = useHeader();
+
+    useEffect(() => {
+        setTitle('Smart Home');
+    }, [setTitle]);
+
     return (
         <> 
-            <h1>Devices</h1>            
         </>
     );
 };

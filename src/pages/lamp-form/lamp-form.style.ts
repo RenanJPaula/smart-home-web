@@ -11,10 +11,6 @@ export const Container = styled.div`
         justify-content: center;
         width: 100%;
     }
-
-    h1 {
-        text-align: center;
-    }
     
     a {
         display: flex;

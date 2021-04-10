@@ -1,6 +1,6 @@
 
-import styled from 'styled-components';
 import { animated } from 'react-spring';
+import styled from 'styled-components';
 
 export const ApplicationLayoutContainer = styled.div`
     position: relative;
@@ -19,6 +19,7 @@ export const MainContent = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    margin-top: 1rem;
 `
 
 export const AnimatedTransictionContainer = styled(animated.div)`

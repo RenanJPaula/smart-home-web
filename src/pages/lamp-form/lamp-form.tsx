@@ -44,7 +44,6 @@ const LampForm: React.FC = () => {
     return (
         <Container>
             <Form ref={formRef} onSubmit={handleSubmit} initialData={{ type: DeviceType.LAMP } as Lamp}>
-                <h1>New Lamp Device</h1>
                 <Input name="name" placeholder="Device Name" icon={BiRename} />
                 <Input name="networkAddress" placeholder="IP Address" icon={FaNetworkWired} />
                 <Button type="submit">Save</Button>

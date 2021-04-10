@@ -5,7 +5,14 @@ export const HeaderContainer = styled.header`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const Title = styled.h1`
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
 `;
 
 export const OpenMenu = styled.button`
